@@ -27,3 +27,37 @@ def primes_less_than(n):
 	return all_primes
 
 print("All primes less than 1,000:\n"+str(primes_less_than(1000)))
+
+p = 823
+q = 251
+def calculate_N(p,q):
+	return p*q
+def calculate_T(p,q):
+	return (p-1)*(q-1)
+
+def pick_e_d(p,q):
+	t = calculate_T(p,q)
+	n = calculate_N(p,q)
+	e=0
+	d=0
+	e_value = 0
+	print(t)
+	for e in range(t):
+		if(is_coprime(e,t) and is_coprime(e,n)):
+			e_value = e
+	print(str(e_value))
+	for d in range(e_value):
+		if((e_value * d) % t) == 1:
+			print("d found")
+			return [e_value,d]
+def encrypt(n, e, letter):
+	pass
+
+def encrypt_message(n, e, message):
+	pass
+def decrypt(n, d, enc):
+	pass
+
+def decrypt_message(n,d,list):
+	pass
+print(str(pick_e_d(p,q)))
